@@ -187,11 +187,11 @@ function update()
     local statusColor
     statusColor = colors.red
 
-    if ri.status == "" or ri.status == "charged" then
+    if ri.status == "" or ri.status == "warming_up" then
       statusColor = colors.green
     elseif ri.status == "offline" then
       statusColor = colors.gray
-    elseif ri.status == "charging" then
+    elseif ri.status == "warming_up" then
       statusColor = colors.orange
     end
 		
@@ -259,7 +259,7 @@ function update()
     end
     
     -- are we charging? open the floodgates
-    if ri.status == "charging" then
+    if ri.status == "warming_up" then
       inputfluxgate.setSignalLowFlow(900000)
       emergencyCharge = false
     end
@@ -271,7 +271,7 @@ function update()
     end
 
     -- are we charged? lets activate
-    if ri.status == "charged" and activateOnCharged == 1 then
+    if ri.status == "warming_up" and activateOnCharged == 1 then
       reactor.activateReactor()
     end
 
