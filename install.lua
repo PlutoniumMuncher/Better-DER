@@ -2,8 +2,8 @@
 --
 --
 
-local libURL = "https://raw.githubusercontent.com/PlutoniumMuncher/Better-DER/refs/heads/master/lib/f.lua?token=GHSAT0AAAAAADA3VNWJE4TMGHLZ3RXOOLI6Z654WCA"
-local startupURL = "https://raw.githubusercontent.com/PlutoniumMuncher/Better-DER/refs/heads/master/drmon.lua?token=GHSAT0AAAAAADA3VNWI6LA5YL5JJ5M2CX7UZ654UMA"
+local libURL = "https://raw.githubusercontent.com/PlutoniumMuncher/Better-DER/refs/heads/master/lib/f.lua"
+local startupURL = "https://raw.githubusercontent.com/PlutoniumMuncher/Better-DER/refs/heads/master/drmon.lua"
 local lib, startup
 local libFile, startupFile
 
