@@ -297,7 +297,7 @@ function update()
     end
 
     -- field strength is too dangerous, kill and it try and charge it before it blows
-    if fieldPercent <= lowestFieldPercent and ri.status == "" then
+    if fieldPercent <= lowestFieldPercent and ri.status == "running" then
       action = "Field Str < " ..lowestFieldPercent.."%"
       reactor.shutdown()
       reactor.chargeReactor()
