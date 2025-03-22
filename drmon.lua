@@ -292,21 +292,21 @@ function update()
     
     -- out of fuel, kill it
     if fuelPercent <= 10 then
-      reactor.stopReactor()
+      reactor.shutdown()
       action = "Fuel below 10%, refuel"
     end
 
     -- field strength is too dangerous, kill and it try and charge it before it blows
     if fieldPercent <= lowestFieldPercent and ri.status == "" then
       action = "Field Str < " ..lowestFieldPercent.."%"
-      reactor.stopReactor()
+      reactor.shutdown()
       reactor.chargeReactor()
       emergencyCharge = true
     end
 
     -- temperature too high, kill it and activate it when its cool
     if ri.temperature > maxTemperature then
-      reactor.stopReactor()
+      reactor.shutdown()
       action = "Temp > " .. maxTemperature
       emergencyTemp = true
     end
